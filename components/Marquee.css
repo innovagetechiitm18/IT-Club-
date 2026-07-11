@@ -1,0 +1,20 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the track exactly halfway to create a seamless loop */
+    transform: translateX(-50%); 
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* Optional: Pause the marquee when the user hovers over it */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
