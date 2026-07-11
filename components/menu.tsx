@@ -41,6 +41,22 @@ export default function StaggerMenu({ isOpen = false , setIsOpen }: StaggerMenuP
     return () => ctx.revert();
   }, []);
 
+   useEffect(() => {
+    const scroll = () => {
+      const id = window.location.hash.slice(1);
+      if (!id) return;
+
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    };
+
+    scroll(); // initial load
+    window.addEventListener("hashchange", scroll);
+
+    return () => window.removeEventListener("hashchange", scroll);
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       tl.current?.play();
@@ -74,18 +90,23 @@ export default function StaggerMenu({ isOpen = false , setIsOpen }: StaggerMenuP
             </Link>
           </li>
           <li>
-            <Link href="/about" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+            <Link href="/#about" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
               About
             </Link>
           </li>
           <li>
-            <Link href="/services" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
-              Members
+            <Link href="/#departments" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+              Departments
             </Link>
           </li>
           <li>
-            <Link href="/portfolio" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
-              Projects
+            <Link href="/#team" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+              Team
+            </Link>
+          </li>
+           <li>
+            <Link href="/#gallery" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+              Glimpse
             </Link>
           </li>
           <li>

@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
 export default function Hero() {
   return (
     <div className="panel p-5 min-h-[calc(100vh-150px)] space-y-8">
@@ -21,10 +21,10 @@ export default function Hero() {
           mentorship.
         </p>
 
-        <div className="flex justify-center items-center space-x-4">
-          <Button className="rounded-4x py-6 px-8 text-md" size={"lg"}>Join Now</Button>
-          <Button variant="outline" size={"lg"} className="text-white py-6 px-8 text-md ">
-            Glimpse
+        <div className="flex justify-center flex-col sm:flex-row gap-4">
+          <Button className="rounded-4xl py-6 px-8 text-md" size={"lg"}>Join Us</Button>
+          <Button variant="outline" size={"lg"} className="text-white rounded-4xl py-6 px-8 text-md ">
+            <Link href="/#gallery">Glimpse</Link> 
           </Button>
         </div>
       </div>

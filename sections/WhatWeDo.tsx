@@ -1,4 +1,5 @@
 import { Button } from "../components/ui/button";
+import Link from "next/link";
 export default function WhatWeDo() {
   return (
     <div className="max-w-6xl w-full rounded-4xl mx-auto  bg-blue-700 py-8 px-6">
@@ -13,22 +14,22 @@ export default function WhatWeDo() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-  <Button
-    variant={"secondary"}
-    className="bg-white hover:scale-[1.1] hover-bg-w text-black py-6 px-8 text-md w-full sm:w-auto"
-    size="lg"
-  >
-    Join Now
-  </Button>
+            <Button
+              variant={"secondary"}
+              className="bg-white hover:scale-[1.1] rounded-4xl hover-bg-w text-black py-6 px-8 text-md w-full sm:w-auto"
+              size="lg"
+            >
+              <Link href="/#team"> Our Team</Link>
+            </Button>
 
-  <Button
-    variant="outline"
-    size="lg"
-    className="text-white hover:text-black py-6 px-8 text-md w-full sm:w-auto"
-  >
-    Glimpse
-  </Button>
-</div>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-white hover:text-black rounded-4xl py-6 px-8 text-md w-full sm:w-auto"
+            >
+              <Link href="/#gallery">Glimpse</Link>
+            </Button>
+          </div>
         </div>
 
         <div className="w-full md:w-[50%]">
