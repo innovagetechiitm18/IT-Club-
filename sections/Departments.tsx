@@ -61,7 +61,7 @@ export default function Departments() {
       className="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:items-start justify-center w-full relative"
     >
       <div className="w-full lg:w-[40%] h-fit lg:sticky lg:top-25 flex flex-col justify-between z-10">
-        <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight leading-none text-white">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-white">
           Our Departments
         </h1>
         <p className="text-base md:text-lg text-white/80 mt-6 leading-relaxed">

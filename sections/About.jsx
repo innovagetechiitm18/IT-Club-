@@ -13,11 +13,11 @@ export default function About() {
 
         <div className="w-full md:w-1/2">
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold uppercase text-white sm:text-5xl lg:text-6xl">
+            <h2 className="text-5xl md:text-7xl font-bold uppercase text-white">
               About Us
             </h2>
 
-            <p className="text-base leading-8 text-slate-300 sm:text-lg">
+            <p className=" leading-8 text-slate-300 sm:text-lg">
               At{" "}
               <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text font-semibold text-transparent">
                 Innovage Tech
