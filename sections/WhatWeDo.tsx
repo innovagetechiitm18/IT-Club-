@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/button";
 export default function WhatWeDo() {
   return (
-    <div className="max-w-6xl rounded-4xl mx-auto mt-7 bg-blue-700 py-8 px-6">
+    <div className="max-w-6xl w-full rounded-4xl mx-auto  bg-blue-700 py-8 px-6">
       <div className="w-full bg-blue-700 py-16 px-6 mx-auto flex flex-col md:flex-row items-strech justify-between gap-16">
         <div className="w-full md:w-[45%] space-y-8 ">
           <h2 className="text-6xl md:text-8xl font-extrabold text-white tracking-tight leading-none">
@@ -12,21 +12,23 @@ export default function WhatWeDo() {
             experiences and high-stakes competitions.
           </p>
 
-          <div className="flex  items-center space-x-4">
-            <Button
-              className="rounded-4x bg-white hover:bg-yellow-50 text-black py-6 px-8 text-md"
-              size={"lg"}
-            >
-              Join Now
-            </Button>
-            <Button
-              variant="outline"
-              size={"lg"}
-              className="  text-white hover:text-black py-6 px-8 text-md "
-            >
-              Glimpse
-            </Button>
-          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+  <Button
+    variant={"secondary"}
+    className="bg-white hover:scale-[1.1] hover-bg-w text-black py-6 px-8 text-md w-full sm:w-auto"
+    size="lg"
+  >
+    Join Now
+  </Button>
+
+  <Button
+    variant="outline"
+    size="lg"
+    className="text-white hover:text-black py-6 px-8 text-md w-full sm:w-auto"
+  >
+    Glimpse
+  </Button>
+</div>
         </div>
 
         <div className="w-full md:w-[50%]">
