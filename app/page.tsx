@@ -39,19 +39,19 @@ export default function Home() {
 
         <Marquee />
 
-        <section id="about">
+        <section id="about" className="scroll-mt-20">
           <About />
         </section>
 
-        <section id="departments">
+        <section id="departments" className="scroll-mt-20">
           <Departments />
         </section>
 
-        <section id="what-we-do">
+        <section id="what-we-do" className="scroll-mt-20">
           <WhatWeDo />
         </section>
 
-        <section id="team">
+        <section id="team" className="scroll-mt-20">
           <Team />
         </section>
 

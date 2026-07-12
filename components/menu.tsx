@@ -41,21 +41,27 @@ export default function StaggerMenu({ isOpen = false , setIsOpen }: StaggerMenuP
     return () => ctx.revert();
   }, []);
 
-   useEffect(() => {
-    const scroll = () => {
-      const id = window.location.hash.slice(1);
-      if (!id) return;
+  useEffect(() => {
+  const scroll = () => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
 
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-      });
-    };
+    const element = document.getElementById(id);
+    if (!element) return;
 
-    scroll(); // initial load
-    window.addEventListener("hashchange", scroll);
+    const headerHeight = 400; // Adjust to your header height
 
-    return () => window.removeEventListener("hashchange", scroll);
-  }, []);
+    window.scrollTo({
+      top: element.getBoundingClientRect().top + window.scrollY - headerHeight,
+      behavior: "smooth",
+    });
+  };
+
+  scroll(); // initial load
+  window.addEventListener("hashchange", scroll);
+
+  return () => window.removeEventListener("hashchange", scroll);
+}, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -64,6 +70,12 @@ export default function StaggerMenu({ isOpen = false , setIsOpen }: StaggerMenuP
       tl.current?.reverse();
     }
   }, [isOpen]);
+
+  const handleLinkClick = () => {
+  if (window.innerWidth < 768) {
+    setIsOpen(false);
+  }
+};
 
   return (
     <>
@@ -85,27 +97,27 @@ export default function StaggerMenu({ isOpen = false , setIsOpen }: StaggerMenuP
       <nav className="relative z-30 w-full px-6 md:px-12 text-center md:text-left">
         <ul ref={linksRef} className="space-y-8">
           <li>
-            <Link href="/" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+            <Link href="/" onClick={handleLinkClick} className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/#about" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+            <Link href="/#about" onClick={handleLinkClick} className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
               About
             </Link>
           </li>
           <li>
-            <Link href="/#departments" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+            <Link href="/#departments" onClick={handleLinkClick} className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
               Departments
             </Link>
           </li>
           <li>
-            <Link href="/#team" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+            <Link href="/#team" onClick={handleLinkClick} className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
               Team
             </Link>
           </li>
            <li>
-            <Link href="/#gallery" className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
+            <Link href="/#gallery" onClick={handleLinkClick} className="text-black hover:text-blue-700 inline-block text-3xl md:text-[3.5rem] leading-none font-black tracking-tighter transition-colors duration-300">
               Glimpse
             </Link>
           </li>

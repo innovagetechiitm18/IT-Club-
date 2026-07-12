@@ -118,7 +118,7 @@ export default function Team() {
     >
       <div className="w-full lg:w-[40%] flex flex-col justify-between">
         <div>
-          <h1 className="text-7xl text-white font-bold">Our Team</h1>
+          <h1 className="text-5xl md:text-7xl  text-white font-bold">Our Team</h1>
           <p className="text-white/80 text-lg mt-2 leading-relaxed">
             Know The Members under the hood.
           </p>

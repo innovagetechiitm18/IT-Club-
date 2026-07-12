@@ -29,7 +29,7 @@ export default function RootLayout({
     >
       <body className="relative overflow-x-hidden min-h-screen bg-[black]">
         
-        <div className="absolute inset-0 h-[calc(100vh-50px)] -z-10 pointer-events-none">
+        <div className="absolute inset-0 h-screen -z-10 pointer-events-none">
           <LightRays
             raysOrigin="top-center"
             raysColor="#ffffff"
