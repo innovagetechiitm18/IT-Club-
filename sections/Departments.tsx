@@ -40,8 +40,8 @@ export default function Departments() {
               start: desktop ? "top 100px" : "top -150px",
               end: "bottom top",
               pin: true,
-              pinSpacing: true,
-              pinReparent: true,
+             // pinSpacing: true,
+             // pinReparent: true,
               scrub: 1,
             },
           });
