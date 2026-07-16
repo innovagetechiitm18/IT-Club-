@@ -4,7 +4,7 @@ import { scrollToSection } from "@/lib/utils";
 import { openJoinModal } from "@/components/JoinUsModal";
 export default function Hero() {
   return (
-    <div className="panel p-5 min-h-[calc(100vh-150px)] space-y-8">
+    <div className="panel p-5 min-h-[calc(100vh-150px)] flex items-center justify-center">
       <div className="mx-auto max-w-5xl 2xl:max-w-6xl 3xl:max-w-7xl text-center space-y-6">
         <div>
           <h1 className="text-4xl md:text-6xl 2xl:text-7xl p-2 mt-2 font-bold bg-clip-text  text-transparent bg-linear-to-r from-blue-400 to-cyan-400">
