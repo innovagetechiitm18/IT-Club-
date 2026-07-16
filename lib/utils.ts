@@ -22,3 +22,27 @@ export function goToCard(totalCards: number, index: number, duration = 0.8) {
     ease: "power2.out",
   });
 }
+
+
+export function scrollToSection(id: string, delay = 0): void {
+  const scroll = () => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const headerHeight = 80;
+    const targetY =
+      element.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: targetY, autoKill: true },
+      ease: "power3.out",
+    });
+  };
+
+  if (delay > 0) {
+    setTimeout(scroll, delay);
+  } else {
+    scroll();
+  }
+}

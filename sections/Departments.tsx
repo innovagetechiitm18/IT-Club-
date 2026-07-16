@@ -92,12 +92,15 @@ export default function Departments() {
           mx-auto
           flex
           max-w-6xl
+          2xl:max-w-7xl
+          3xl:max-w-[1600px]
           flex-col
           gap-14
           px-6
           md:flex-row
           md:items-start
           md:gap-20
+          2xl:gap-28
           md:px-8
         "
       >
@@ -113,7 +116,7 @@ export default function Departments() {
                 text-white
                 md:text-5xl
                 lg:text-6xl
-               
+                2xl:text-7xl
               "
             >
               Our Departments
@@ -126,6 +129,8 @@ export default function Departments() {
                 leading-8
                 text-white/80
                 sm:text-lg
+                2xl:text-xl
+                2xl:leading-9
               "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

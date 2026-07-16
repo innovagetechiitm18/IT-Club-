@@ -1,25 +1,27 @@
+"use client";
 import React from "react";
-import Link from "next/link";
+import { openJoinModal } from "@/components/JoinUsModal";
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-700 text-white pt-16 pb-8 px-6 md:px-12 flex flex-col relative w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+    <footer className="bg-blue-700 text-white pt-16 2xl:pt-24 pb-8 px-6 md:px-12 2xl:px-16 flex flex-col relative w-full overflow-hidden">
+      <div className="max-w-7xl 3xl:max-w-[1600px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 2xl:gap-16 mb-16">
         <div className="space-y-6">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
+          <h1 className="text-5xl md:text-7xl 2xl:text-8xl font-extrabold tracking-tight">
             Find It <span className="text-">Interesting?</span>
           </h1>
-          <p className="text-white text-lg max-w-md">
+          <p className="text-white text-lg 2xl:text-xl max-w-md 2xl:max-w-lg">
             Ready to take the next step? Join us and let&apos;s build
              amazing memories while something good together.
           </p>
           <div className="inline-block mt-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 text-xl font-bold text-slate-900 bg-white rounded-full hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg shadow-white/10"
+            <button
+              type="button"
+              onClick={openJoinModal}
+              className="inline-flex items-center justify-center px-8 py-3 text-xl font-bold text-slate-900 bg-white rounded-full hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg shadow-white/10 cursor-pointer border-none"
             >
               Join Us
-            </Link>
+            </button>
           </div>
         </div>
 

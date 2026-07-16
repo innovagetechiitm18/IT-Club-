@@ -55,7 +55,7 @@ export default function Home() {
           <Team />
         </section>
 
-        <section id="gallery">
+        <section id="gallery" className="scroll-mt-20">
           <HorizontalGallery />
         </section>
       </main>

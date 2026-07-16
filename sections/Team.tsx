@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import SpotlightCard from "@/components/SpotlightCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
@@ -105,21 +105,38 @@ export default function Team() {
   const departments = Object.keys(groupedData);
   const grouped = Object.values(groupedData) as (typeof team)[];
 
-  const handleNavigation = (index: number) => {
-    if (swiperInstance) {
-      swiperInstance.slideTo(index);
-    }
-  };
+  const handleNavigation = useCallback(
+    (index: number) => {
+      if (swiperInstance) {
+        swiperInstance.slideTo(index);
+      }
+    },
+    [swiperInstance]
+  );
+
+  // Listen for department navigation events from StackCard
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const deptName = (e as CustomEvent<string>).detail;
+      const index = departments.indexOf(deptName);
+      if (index !== -1) {
+        handleNavigation(index);
+      }
+    };
+
+    window.addEventListener("navigate-to-department", handler);
+    return () => window.removeEventListener("navigate-to-department", handler);
+  }, [departments, handleNavigation]);
 
   return (
     <div
       ref={containerRef}
-      className="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:items-start justify-center w-full relative"
+      className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1600px] mx-auto px-4 py-16 sm:px-6 lg:px-8 2xl:py-24 flex flex-col lg:flex-row gap-8 2xl:gap-12 lg:items-start justify-center w-full relative"
     >
       <div className="w-full lg:w-[40%] flex flex-col justify-between">
         <div>
-          <h1 className="text-5xl md:text-7xl  text-white font-bold">Our Team</h1>
-          <p className="text-white/80 text-lg mt-2 leading-relaxed">
+          <h1 className="text-5xl md:text-7xl 2xl:text-8xl text-white font-bold">Our Team</h1>
+          <p className="text-white/80 text-lg 2xl:text-xl mt-2 leading-relaxed">
             Know The Members under the hood.
           </p>
         </div>

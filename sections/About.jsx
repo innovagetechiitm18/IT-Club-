@@ -4,8 +4,8 @@ import MovingCard from "@/components/MovingCard";
 
 export default function About() {
   return (
-    <section className="about panel w-full py-16 sm:py-20 lg:py-28">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 lg:flex-row lg:gap-20">
+    <section className="about panel w-full py-16 sm:py-20 lg:py-28 2xl:py-36">
+      <div className="mx-auto flex max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1600px] flex-col items-center gap-12 px-6 lg:flex-row lg:gap-20 2xl:gap-28">
         <div className="flex w-full justify-center lg:w-1/2">
           <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none rounded-3xl">
             <MovingCard movementBound={20} image="/college-building.jpg" />
@@ -24,6 +24,7 @@ export default function About() {
                 sm:text-5xl
                 md:text-6xl
                 lg:text-7xl
+                2xl:text-8xl
               "
             >
               About Us
@@ -36,6 +37,8 @@ export default function About() {
                 text-slate-300
                 sm:text-lg
                 lg:text-xl
+                2xl:text-2xl
+                2xl:leading-10
               "
             >
               At{" "}

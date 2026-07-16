@@ -1,6 +1,19 @@
+"use client";
 import SpotlightCard from "./SpotlightCard";
 import { Button } from "./ui/button";
-import { goToCard } from "@/lib/utils";
+import { scrollToSection } from "@/lib/utils";
+
+function navigateToDepartment(departmentName: string) {
+  scrollToSection("team");
+  // Give the scroll a moment to arrive, 
+  // then tell the Team Swiper to slide
+  setTimeout(() => {
+    window.dispatchEvent(
+      new CustomEvent("navigate-to-department", { detail: departmentName })
+    );
+  }, 800);
+}
+
 export default function Team() {
   return (
     <div className="relative h-[60vh] mb-8 w-full">
@@ -13,7 +26,7 @@ export default function Team() {
             fugiat voluptas? Possimus quis similique nisi ex debitis libero
             molestias? Ipsam?
           </p>
-          <Button className="mt-4" onClick={() => goToCard(4,1)}>Meet The Head</Button>
+          <Button className="mt-4" onClick={() => navigateToDepartment("Tech & Gaming")}>Meet The Head</Button>
 
         </SpotlightCard>
       </div>
@@ -27,7 +40,7 @@ export default function Team() {
             fugiat voluptas? Possimus quis similique nisi ex debitis libero
             molestias? Ipsam?
           </p>
-          <Button className="mt-4" onClick={() => goToCard(4,2)}>Meet The Head</Button>
+          <Button className="mt-4" onClick={() => navigateToDepartment("Social Media")}>Meet The Head</Button>
         </SpotlightCard>
       </div>
 
@@ -42,7 +55,7 @@ export default function Team() {
             fugiat voluptas? Possimus quis similique nisi ex debitis libero
             molestias? Ipsam?
           </p>
-          <Button className="mt-4" onClick={() => goToCard(4,3)}>Meet The Head</Button>
+          <Button className="mt-4" onClick={() => navigateToDepartment("Management & Marketing")}>Meet The Head</Button>
 
         </SpotlightCard>
       </div>
