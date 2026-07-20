@@ -45,12 +45,8 @@ export default function About() {
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-semibold text-transparent">
                 Innovage Tech
               </span>
-              , we bring together the next generation of technology leaders—one
-              project at a time. Our club believes students learn best by
-              building real-world projects alongside passionate peers. We
-              explore software development, programming, UI/UX design, AI,
-              cybersecurity, cloud computing, and emerging technologies while
-              creating opportunities to innovate, collaborate, and grow.
+              , we believe innovation begins with people. We are a student-driven IT community dedicated to transforming curiosity into capability through collaboration, creativity, and continuous learning. With our three core departments—Tech & Gaming, Marketing & Management, and Social Media—we empower students to develop their skills, embrace leadership, and create meaningful impact beyond the classroom. 
+
             </p>
           </div>
         </div>

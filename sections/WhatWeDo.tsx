@@ -10,8 +10,8 @@ export default function WhatWeDo() {
             What <br className="hidden md:block" /> We Do?
           </h2>
           <p className="text-xl 2xl:text-2xl text-yellow-50 font-medium max-w-md 2xl:max-w-lg">
-            Empowering builders, creators, and innovators through immersive
-            experiences and high-stakes competitions.
+           We bring ideas to life through hackathons, workshops, tournaments, technical sessions, and engaging events, creating opportunities for students to learn, compete, collaborate, and grow.
+
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -49,7 +49,7 @@ export default function WhatWeDo() {
                   <p className="text-lg 2xl:text-xl text-yellow-50 leading-relaxed">
                     Transform caffeine and code into groundbreaking solutions.
                     Collaborate with visionaries, build under pressure, and
-                    compete for massive prize pools.
+                    compete for prize pools.
                   </p>
                 </div>
               </div>

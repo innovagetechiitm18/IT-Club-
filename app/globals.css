@@ -228,3 +228,24 @@ h6 {
 .custom-scrollbar::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* Team section swipe indicator dots */
+.team-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.team-dot-active {
+  width: 28px;
+  background: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}

@@ -21,10 +21,8 @@ export default function Team() {
         <SpotlightCard className="p-8  rounded-2xl" spotlightColor="rgba(20, 71, 230, 0.4)">
           <h1 className="text-3xl font-bold text-white">Tech & Gaming</h1>
           <p className="text-base text-zinc-400 mt-4 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ea
-            cum! Ex beatae atque reprehenderit dolorem nihil aliquid nulla
-            fugiat voluptas? Possimus quis similique nisi ex debitis libero
-            molestias? Ipsam?
+            The Tech & Gaming Department serves as the technological core of Innovage Tech, fostering innovation through learning, collaboration, and creativity. From coding and emerging technologies to gaming and technical events, we empower members to develop skills, solve challenges, and shape the future of technology. 
+
           </p>
           <Button className="mt-4" onClick={() => navigateToDepartment("Tech & Gaming")}>Meet The Head</Button>
 
@@ -35,10 +33,8 @@ export default function Team() {
         <SpotlightCard className="p-8 rounded-2xl" spotlightColor="rgba(20, 71, 230, 0.4)">
           <h1 className="text-3xl font-bold text-white">Social Media</h1>
           <p className="text-base text-zinc-400 mt-4 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ea
-            cum! Ex beatae atque reprehenderit dolorem nihil aliquid nulla
-            fugiat voluptas? Possimus quis similique nisi ex debitis libero
-            molestias? Ipsam?
+            The Social Media Department is dedicated to shaping how Innovage Tech is seen, remembered, and experienced. Through creative storytelling, impactful content, and meaningful engagement, we amplify the club&apos;s vision, celebrate its achievements, and connect our community with every milestone.
+
           </p>
           <Button className="mt-4" onClick={() => navigateToDepartment("Social Media")}>Meet The Head</Button>
         </SpotlightCard>
@@ -50,10 +46,8 @@ export default function Team() {
             Management & Marketing
           </h1>
           <p className="text-base text-zinc-400 mt-4 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ea
-            cum! Ex beatae atque reprehenderit dolorem nihil aliquid nulla
-            fugiat voluptas? Possimus quis similique nisi ex debitis libero
-            molestias? Ipsam?
+            The Marketing & Management Department drives the strategic vision of Innovage Tech through planning, coordination, and effective execution. By blending leadership, creativity, and organization, we ensure every initiative reflects the club&apos;s values while creating meaningful experiences for our community.
+
           </p>
           <Button className="mt-4" onClick={() => navigateToDepartment("Management & Marketing")}>Meet The Head</Button>
 

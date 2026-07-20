@@ -16,10 +16,7 @@ export default function Hero() {
         </div>
 
         <p className="text-md md:text-lg 2xl:text-xl leading-relaxed text-zinc-200 max-w-3xl 2xl:max-w-4xl mx-auto mt-4">
-          The official tech club of the Institute of Innovation in Technology
-          and Management, where students learn, build innovative projects, and
-          gain real-world experience through workshops, hackathons, and
-          mentorship.
+         The official IT club of the Institute of Innovation in Technology and Management, empowering students to explore technology, build impactful projects, and gain real-world experience through workshops, hackathons, mentorship, and collaborative learning.
         </p>
 
         <div className="flex justify-center flex-col sm:flex-row gap-4">

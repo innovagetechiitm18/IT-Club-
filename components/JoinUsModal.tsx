@@ -19,7 +19,6 @@ export default function JoinUsModal() {
   useEffect(() => {
     const handler = () => {
       setIsOpen(true);
-      // Trigger entrance animation on next frame
       requestAnimationFrame(() => {
         requestAnimationFrame(() => setIsVisible(true));
       });
@@ -28,7 +27,6 @@ export default function JoinUsModal() {
     return () => window.removeEventListener("open-join-modal", handler);
   }, []);
 
-  // Escape key
   useEffect(() => {
     if (!isOpen) return;
     const handler = (e: KeyboardEvent) => {
@@ -38,7 +36,6 @@ export default function JoinUsModal() {
     return () => window.removeEventListener("keydown", handler);
   }, [isOpen, close]);
 
-  // Lock body scroll
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -62,20 +59,16 @@ export default function JoinUsModal() {
       aria-modal="true"
       aria-labelledby="join-modal-title"
     >
-      {/* Backdrop */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
 
-      {/* Modal Card */}
       <div
         onClick={(e) => e.stopPropagation()}
         className={`relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/90 backdrop-blur-xl shadow-2xl shadow-blue-500/10 transition-all duration-300 ${
           isVisible ? "scale-100 translate-y-0" : "scale-95 translate-y-4"
         }`}
       >
-        {/* Gradient glow top */}
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-48 w-48 rounded-full bg-blue-600/30 blur-3xl pointer-events-none" />
 
-        {/* Close button */}
         <button
           onClick={close}
           className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-white/50 transition-all hover:bg-white/10 hover:text-white"
@@ -86,10 +79,8 @@ export default function JoinUsModal() {
           </svg>
         </button>
 
-        {/* Content */}
         <div className="relative flex flex-col items-center px-8 pt-10 pb-8 text-center">
-          {/* Animated icon */}
-          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 shadow-lg shadow-blue-500/25">
+          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-blue-700 shadow-lg shadow-blue-500/25">
             <svg
               width="36"
               height="36"
@@ -120,13 +111,12 @@ export default function JoinUsModal() {
             applications open!
           </p>
 
-          {/* Social links */}
           <div className="flex items-center gap-4 mb-6">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white/60 transition-all duration-300 hover:bg-gradient-to-br hover:from-pink-500 hover:to-orange-400 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-pink-500/20"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white/60 transition-all duration-300 hover:bg-blue-700 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-pink-500/20"
               aria-label="Follow us on Instagram"
             >
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -146,10 +136,9 @@ export default function JoinUsModal() {
             </a>
           </div>
 
-          {/* Close action */}
           <button
             onClick={close}
-            className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 py-3 text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full rounded-full bg-blue-700 py-3 text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
           >
             Got It
           </button>

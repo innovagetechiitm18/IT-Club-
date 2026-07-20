@@ -11,8 +11,7 @@ export default function Footer() {
             Find It <span className="text-">Interesting?</span>
           </h1>
           <p className="text-white text-lg 2xl:text-xl max-w-md 2xl:max-w-lg">
-            Ready to take the next step? Join us and let&apos;s build
-             amazing memories while something good together.
+           Connect with passionate students, learn new skills, build real-world projects, and create lasting memories along the way.
           </p>
           <div className="inline-block mt-4">
             <button
@@ -48,13 +47,14 @@ export default function Footer() {
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              hello@innovagetech.com
+              innovagetechiintm@gmail.com
+
             </a>
 
             <div className="flex gap-4 pt-2 md:justify-end">
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="www.linkedin.com/in/innovagetech"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 bg-slate-800 rounded-full hover:bg-white hover:-translate-y-1 transition-all duration-300 text-white hover:text-black"
@@ -71,7 +71,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/itclubiitm"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 bg-slate-800 rounded-full hover:bg-white hover:-translate-y-1 transition-all duration-300 text-white hover:text-black"

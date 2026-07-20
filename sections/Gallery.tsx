@@ -86,7 +86,7 @@ export default function HorizontalGallery() {
         ref={sliderRef}
         className="flex h-full w-max items-center will-change-transform"
       >
-        {galleryEvents.map((event) => (
+        {galleryEvents.map((event,ei) => (
           <div
             key={event.id}
             className="flex shrink-0 flex-col justify-center px-10 md:px-24"
@@ -102,12 +102,12 @@ export default function HorizontalGallery() {
                   className="relative h-80 w-64 shrink-0 overflow-hidden md:h-75 md:w-100"
                 >
                   <Image
-                    src={`https://picsum.photos/seed/${imgNum}/600/800`}
+                    src={`/e${ei + 1}-${i + 1}.jpeg`}
                     alt={`${event.title} — photo ${i + 1}`}
                     fill
                     sizes="(max-width: 768px) 256px, 400px"
                     priority={imgNum <= 4}
-                    className="object-cover grayscale transition-transform duration-700 hover:scale-110 hover:grayscale-0"
+                    className="object-cover transition-transform duration-700 hover:scale-110"
                   />
                 </div>
               ))}

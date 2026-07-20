@@ -133,10 +133,8 @@ export default function Departments() {
                 2xl:leading-9
               "
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem cupiditate adipisci vel velit accusamus. Exercitationem
-              provident saepe eligendi aspernatur laboriosam, nemo consectetur
-              pariatur recusandae voluptatibus illum.
+              Three departments. One vision. United by innovation, collaboration, and a shared passion for growth, each department offers a unique path to learn, create, and lead. 
+
             </p>
           </div>
         </div>
