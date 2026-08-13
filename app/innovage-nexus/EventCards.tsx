@@ -409,22 +409,11 @@ function EventCard({ event, index }: { event: EventData; index: number }) {
             target="_blank"
             rel="noopener noreferrer"
             id={`register-${event.id}`}
-            className={`event-register-btn group/reg flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm tracking-wide bg-gradient-to-r ${event.accentFrom} ${event.accentTo} transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]`}
+            aria-disabled="true"
+            tabIndex={-1}
+            className={`event-register-btn group/reg flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm tracking-wide bg-gradient-to-r ${event.accentFrom} ${event.accentTo} transition-all duration-300 opacity-70 cursor-not-allowed pointer-events-none`}
           >
-            Register Now
-            <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover/reg:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
+            Registration Opening Soon
           </a>
         </div>
       </div>

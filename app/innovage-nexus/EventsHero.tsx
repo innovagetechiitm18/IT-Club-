@@ -48,7 +48,7 @@ export default function EventsHero() {
           className="text-lg md:text-xl 2xl:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed"
         >
           Compete, create, and conquer — from design sprints to gaming
-          battlegrounds. Pick your arena and register now.
+          battlegrounds. Pick your arena — registration opening soon.
         </p>
       </div>
     </div>

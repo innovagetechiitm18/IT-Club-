@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Innovage Nexus | Innovage Tech Club",
     description:
-      "Innovage Nexus — design competitions, AI-powered coding, mobile gaming tournaments, and cinematic challenges. Register now!",
+      "Innovage Nexus — design competitions, AI-powered coding, mobile gaming tournaments, and cinematic challenges. Registration opening soon.",
     type: "website",
   },
 };
