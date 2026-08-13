@@ -30,7 +30,7 @@ export default function WhatWeDo() {
               className="text-white hover:text-black rounded-4xl py-6 px-8 text-md w-full sm:w-auto"
               onClick={() => scrollToSection("gallery")}
             >
-              Glimpse
+              Events
             </Button>
           </div>
         </div>

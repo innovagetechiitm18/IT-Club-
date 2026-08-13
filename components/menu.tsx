@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+
 import gsap from "gsap";
 import { HamburgerButton } from "@/components/hamBtm";
 import { scrollToSection } from "@/lib/utils";
@@ -18,6 +19,10 @@ export default function StaggerMenu({ isOpen = false, setIsOpen }: StaggerMenuPr
   const bgRef2 = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLUListElement>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isHomePage = pathname === "/";
 
   // 1. GSAP Animation Setup
   useEffect(() => {
@@ -61,6 +66,9 @@ export default function StaggerMenu({ isOpen = false, setIsOpen }: StaggerMenuPr
     };
   }, [isOpen]);
 
+  const pendingSection = useRef<string | null>(null);
+
+  // Scroll to hash on initial mount
   useEffect(() => {
     const id = window.location.hash.slice(1);
     if (id) {
@@ -68,10 +76,25 @@ export default function StaggerMenu({ isOpen = false, setIsOpen }: StaggerMenuPr
     }
   }, []);
 
+  // Scroll to pending section after navigating to homepage
+  useEffect(() => {
+    if (isHomePage && pendingSection.current) {
+      const sectionId = pendingSection.current;
+      pendingSection.current = null;
+      scrollToSection(sectionId, 600);
+    }
+  }, [isHomePage]);
+
   const handleSectionClick = (sectionId: string) => {
     setIsOpen(false);
-    // Delay scroll to let the menu close animation play
-    scrollToSection(sectionId, 600);
+    if (isHomePage) {
+      // Already on homepage — just scroll to the section
+      scrollToSection(sectionId, 600);
+    } else {
+      // Store the target and navigate to homepage
+      pendingSection.current = sectionId;
+      router.push("/");
+    }
   };
 
   const handleLinkClick = () => {
@@ -118,7 +141,7 @@ export default function StaggerMenu({ isOpen = false, setIsOpen }: StaggerMenuPr
               { name: "About", sectionId: "about" },
               { name: "Departments", sectionId: "departments" },
               { name: "Team", sectionId: "team" },
-              { name: "Glimpse", sectionId: "gallery" },
+              { name: "Events", sectionId: "gallery" },
             ].map((link) => (
               <li key={link.name}>
                 <button
@@ -126,7 +149,11 @@ export default function StaggerMenu({ isOpen = false, setIsOpen }: StaggerMenuPr
                   onClick={() => {
                     if (link.sectionId === "") {
                       setIsOpen(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      if (isHomePage) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        router.push("/");
+                      }
                     } else {
                       handleSectionClick(link.sectionId);
                     }

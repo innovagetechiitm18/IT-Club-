@@ -2,6 +2,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
 import JoinUsModal from "@/components/JoinUsModal";
+import EventsModal from "@/components/EventsModal";
 import Footer from "@/components/Footer";
 import { Outfit, Poppins } from "next/font/google";
 import LightRays from "@/components/LightRays";
@@ -68,6 +69,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <JoinUsModal />
+        <EventsModal />
       </body>
     </html>
   );

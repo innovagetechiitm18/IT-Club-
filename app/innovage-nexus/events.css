@@ -1,0 +1,61 @@
+/* ─── Event Card ─── */
+.event-card {
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 20px 60px -12px rgba(0, 0, 0, 0.5),
+    0 0 40px -10px rgba(59, 130, 246, 0.08);
+}
+
+/* ─── Spotlight Hover Effect ─── */
+.event-card-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  background: radial-gradient(
+    500px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.04),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.event-card:hover .event-card-spotlight {
+  opacity: 1;
+}
+
+/* ─── Expandable Rules ─── */
+.event-rules-container {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+}
+
+.event-rules-expanded {
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* ─── Last card (odd count) spans full width ─── */
+@media (min-width: 1024px) {
+  .event-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1rem);
+    justify-self: center;
+  }
+}

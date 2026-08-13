@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/utils";
 import { openJoinModal } from "@/components/JoinUsModal";
+
 export default function Hero() {
   return (
     <div className="panel p-5 min-h-[calc(100vh-150px)] flex items-center justify-center">
@@ -21,13 +22,14 @@ export default function Hero() {
 
         <div className="flex justify-center flex-col sm:flex-row gap-4">
           <Button className="rounded-4xl py-6 px-8 text-md" size={"lg"} onClick={openJoinModal}>Join Us</Button>
+
           <Button
             variant="outline"
             size={"lg"}
             className="text-white rounded-4xl py-6 px-8 text-md"
             onClick={() => scrollToSection("gallery")}
           >
-            Glimpse
+            Events
           </Button>
         </div>
       </div>
