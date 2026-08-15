@@ -113,7 +113,7 @@ export default function JoinUsModal() {
 
           <div className="flex items-center gap-4 mb-6">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/itclubiitm"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white/60 transition-all duration-300 hover:bg-blue-700 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-pink-500/20"
@@ -124,7 +124,7 @@ export default function JoinUsModal() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/innovagetech"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white/60 transition-all duration-300 hover:bg-blue-600 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"

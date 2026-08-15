@@ -35,11 +35,9 @@ const team = [
     department: "Vice Presidents",
     name: "ayush",
     pic: "ayush.jpeg",
-    about: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    instagram:
-      "https://www.instagram.com/mr_ayushchauhan?igsh=cjl1b3k4NWd3eGJz",
-    linkedin:
-      "-https://www.linkedin.com/in/ayush-chauhan-96740036a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    about: "Building a tech-driven community where ideas become meaningful innovations.",
+    instagram:"https://www.instagram.com/mr_ayushchauhan?igsh=cjl1b3k4NWd3eGJz",
+    linkedin:"https://www.linkedin.com/in/ayush-chauhan-96740036a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
   },
   {
     post: "Technical Head",
@@ -109,7 +107,7 @@ const team = [
     about:
       "Driving growth through creativity, strategic communication, and impactful outreach.",
     instagram: "https://instagram.com/shrutikumari",
-    linkedin: "https://linkedin.com/in/shrutikumari",
+    linkedin: "https://www.linkedin.com/in/shruti-kumari-3b461638b",
   },
 ];
 

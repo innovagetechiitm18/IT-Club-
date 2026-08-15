@@ -54,7 +54,7 @@ export default function Footer() {
             <div className="flex gap-4 pt-2 md:justify-end">
               {/* LinkedIn */}
               <a
-                href="www.linkedin.com/in/innovagetech"
+                href="https://www.linkedin.com/in/innovagetech"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 bg-slate-800 rounded-full hover:bg-white hover:-translate-y-1 transition-all duration-300 text-white hover:text-black"
