@@ -27,7 +27,7 @@ interface EventData {
 const EVENTS: EventData[] = [
   {
     id: "ux-ui-design",
-    title: "UX/UI Designing",
+    title: "Figma UX/UI Designing",
     category: "Design",
     categoryColor: "text-purple-400",
     registrationLink: "#",
@@ -101,8 +101,8 @@ const EVENTS: EventData[] = [
     accentTo: "to-blue-500",
   },
   {
-    id: "bgmi",
-    title: "Gaming — BGMI",
+    id: "gaming",
+    title: "Gaming — BGMI & Free Fire",
     category: "Gaming",
     categoryColor: "text-amber-400",
     registrationLink: "#",
@@ -124,17 +124,17 @@ const EVENTS: EventData[] = [
       </svg>
     ),
     description:
-      "Squad up and dominate the battleground! Assemble your 4-player team and fight for victory in BGMI.",
+      "Squad up and dominate the battleground! Assemble your 4-player team and fight for victory in BGMI & Free Fire.",
     highlight: "Team of 4 / Squad",
     rules: [
-      "Competition in BGMI — team of 4 (squad)",
+      "Competition in BGMI & Free Fire — team of 4 (squad)",
       "Play on your own mobile phone",
-      "Register with correct in-game details",
+      "Register with correct in-game details (BGMI/Free Fire username & UID)",
       "Join lobby on time as informed",
       "Only registered players allowed",
       "Team leader registers for all members",
       "Use your own account",
-      "Hacks/cheats = immediate disqualification",
+      "Hacks/cheats/scripts = immediate disqualification",
       "Follow organizer instructions",
       "Format, map, scoring & timing shared before match",
       "Organizer's decision is final",
@@ -142,54 +142,6 @@ const EVENTS: EventData[] = [
     ],
     accentFrom: "from-amber-500",
     accentTo: "to-orange-500",
-  },
-  {
-    id: "freefire",
-    title: "Gaming — Free Fire",
-    category: "Gaming",
-    categoryColor: "text-red-400",
-    registrationLink: "#",
-    fee: "₹60",
-    feeNote: "per person",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z"
-        />
-      </svg>
-    ),
-    description:
-      "Gear up for the ultimate Free Fire showdown! Build your 4-player squad and battle for supremacy.",
-    highlight: "Team of 4 / Squad",
-    rules: [
-      "Competition in Free Fire — team of 4 (squad)",
-      "Play on your own mobile phone",
-      "Register with correct in-game details",
-      "Join lobby on time as informed",
-      "Only registered players allowed",
-      "Team leader registers for all members",
-      "Use your own account",
-      "Hacks/cheats/scripts = disqualification",
-      "Follow organizer instructions",
-      "Format, scoring & timing shared before match",
-      "Organizer's decision is final",
-      "Ensure stable internet and device",
-    ],
-    accentFrom: "from-red-500",
-    accentTo: "to-orange-600",
   },
   {
     id: "cinematic-shots",
@@ -378,27 +330,7 @@ function EventCard({ event, index }: { event: EventData; index: number }) {
               ))}
             </ul>
 
-            {(event.id === "bgmi" || event.id === "freefire") && (
-              <div className="mt-4 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                <svg
-                  className="w-4 h-4 text-amber-400 shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
-                  />
-                </svg>
-                <span className="text-sm font-medium text-amber-300">
-                  Important: Enter correct{" "}
-                  {event.id === "bgmi" ? "BGMI" : "Free Fire"} username/UID
-                </span>
-              </div>
-            )}
+           
           </div>
         </div>
 
@@ -409,11 +341,9 @@ function EventCard({ event, index }: { event: EventData; index: number }) {
             target="_blank"
             rel="noopener noreferrer"
             id={`register-${event.id}`}
-            aria-disabled="true"
-            tabIndex={-1}
-            className={`event-register-btn group/reg flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm tracking-wide bg-gradient-to-r ${event.accentFrom} ${event.accentTo} transition-all duration-300 opacity-70 cursor-not-allowed pointer-events-none`}
+            className={`event-register-btn group/reg flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm tracking-wide bg-gradient-to-r ${event.accentFrom} ${event.accentTo} transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]`}
           >
-            Registration Opening Soon
+            Register Now
           </a>
         </div>
       </div>
@@ -436,7 +366,7 @@ export default function EventCards() {
           Choose Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">Arena</span>
         </h2>
         <p className="text-zinc-500 mt-3 text-base md:text-lg">
-          5 events · All skill levels welcome
+          4 events · All skill levels welcome
         </p>
       </div>
 
