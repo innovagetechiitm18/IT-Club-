@@ -30,7 +30,7 @@ const EVENTS: EventData[] = [
     title: "Figma UX/UI Designing",
     category: "Design",
     categoryColor: "text-purple-400",
-    registrationLink: "#",
+    registrationLink: "https://forms.gle/8mh227mCiQVShw5z8",
     fee: "₹25",
     icon: (
       <svg
@@ -67,7 +67,7 @@ const EVENTS: EventData[] = [
     title: "Vibe-Coding",
     category: "Development",
     categoryColor: "text-cyan-400",
-    registrationLink: "#",
+    registrationLink: "https://forms.gle/6Jf6MQSrKeAaSGyR8",
     fee: "₹40",
     icon: (
       <svg
@@ -105,7 +105,7 @@ const EVENTS: EventData[] = [
     title: "Gaming — BGMI & Free Fire",
     category: "Gaming",
     categoryColor: "text-amber-400",
-    registrationLink: "#",
+    registrationLink: "https://docs.google.com/forms/d/1W_McnFjQaOddb75SPOyjZ0DNMd-eIU_IVXHpPZQ86Ig/viewform",
     fee: "₹60",
     feeNote: "per person",
     icon: (
@@ -148,7 +148,7 @@ const EVENTS: EventData[] = [
     title: "Cinematic Shots",
     category: "Creative",
     categoryColor: "text-emerald-400",
-    registrationLink: "#",
+    registrationLink: "https://docs.google.com/forms/d/1P0k9E-uvV_MTLBA_8Dxa2O2cHLuHYrfYR6_j1LNwX8E/viewform",
     fee: "₹50",
     icon: (
       <svg
