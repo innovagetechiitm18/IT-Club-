@@ -336,15 +336,12 @@ function EventCard({ event, index }: { event: EventData; index: number }) {
 
         {/* Register Button */}
         <div className="mt-6 pt-5 border-t border-white/[0.06]">
-          <a
-            href={event.registrationLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             id={`register-${event.id}`}
-            className={`event-register-btn group/reg flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm tracking-wide bg-gradient-to-r ${event.accentFrom} ${event.accentTo} transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]`}
+            className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white/50 text-sm tracking-wide bg-zinc-700 cursor-not-allowed select-none`}
           >
-            Register Now
-          </a>
+            Registration Open Soon
+          </div>
         </div>
       </div>
     </div>

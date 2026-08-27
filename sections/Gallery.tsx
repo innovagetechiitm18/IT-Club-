@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import Link from "next/link";
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -105,13 +105,13 @@ export default function HorizontalGallery() {
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 mb-8">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
               </span>
               <span className="text-[11px] font-semibold text-zinc-300 tracking-wider uppercase">
-                Registration Open
+                Registration Open Soon
               </span>
             </div>
 
@@ -140,15 +140,11 @@ export default function HorizontalGallery() {
             </div>
 
             {/* CTA */}
-            <Link
-              href="/innovage-nexus"
-              className="inline-flex items-center gap-2 px-10 py-3.5 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.03] active:scale-[0.97]"
+            <div
+              className="inline-flex items-center gap-2 px-10 py-3.5 rounded-full bg-zinc-700 text-white/50 text-sm font-bold uppercase tracking-widest cursor-not-allowed select-none"
             >
-              Explore Events
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
+              Coming Soon
+            </div>
 
             {/* Scroll hint */}
           
