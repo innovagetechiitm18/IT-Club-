@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import JoinUsModal from "@/components/JoinUsModal";
 import EventsModal from "@/components/EventsModal";
 import Footer from "@/components/Footer";
+import AnnouncementTicker from "@/components/AnnouncementTicker";
 import { Outfit, Poppins } from "next/font/google";
 import LightRays from "@/components/LightRays";
 import Particles from "@/components/Particles";
@@ -31,6 +32,11 @@ export default function RootLayout({
     >
       <body className="relative overflow-x-hidden min-h-screen bg-[black]">
         
+        {/* Announcement Ticker — fixed at very top */}
+        <div className="fixed top-0 left-0 right-0 z-50">
+          <AnnouncementTicker />
+        </div>
+
         <div className="absolute inset-0 h-screen -z-10 pointer-events-none">
           <LightRays
             raysOrigin="top-center"
@@ -63,7 +69,7 @@ export default function RootLayout({
           />
         </div>
 
-        <div className="relative z-10 overflow-x-hidden">
+        <div className="relative z-10 overflow-x-hidden pt-[30px]">
           <Header />
           {children}
           <Footer />

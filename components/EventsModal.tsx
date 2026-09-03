@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 export function openEventsModal() {
@@ -11,8 +11,6 @@ export default function EventsModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const dismissedRef = useRef(false);
-  const lastScrollY = useRef(0);
 
   const open = useCallback(() => {
     setIsOpen(true);
@@ -23,11 +21,10 @@ export default function EventsModal() {
 
   const close = useCallback(() => {
     setIsVisible(false);
-    dismissedRef.current = true;
     setTimeout(() => setIsOpen(false), 300);
   }, []);
 
-  // Auto-open on mount (every page load)
+  // Auto-open on mount (once per page load)
   useEffect(() => {
     setMounted(true);
     const timer = setTimeout(() => {
@@ -36,32 +33,9 @@ export default function EventsModal() {
     return () => clearTimeout(timer);
   }, [open]);
 
-  // Re-open on every significant scroll (after user has dismissed)
-  useEffect(() => {
-    if (!mounted) return;
-
-    const handleScroll = () => {
-      if (!dismissedRef.current || isOpen) return;
-
-      const currentY = window.scrollY;
-      const delta = Math.abs(currentY - lastScrollY.current);
-
-      // Trigger after scrolling 600px since last dismiss
-      if (delta > 600) {
-        lastScrollY.current = currentY;
-        dismissedRef.current = false;
-        open();
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [mounted, isOpen, open]);
-
   // Listen for manual open event
   useEffect(() => {
     const handler = () => {
-      dismissedRef.current = false;
       open();
     };
     window.addEventListener("open-events-modal", handler);
@@ -126,14 +100,14 @@ export default function EventsModal() {
         </button>
 
         <div className="relative flex flex-col items-center px-8 pt-10 pb-8 text-center">
-          {/* Hiring badge */}
+          {/* Registration Open badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/20 bg-green-500/5 mb-5">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
             </span>
             <span className="text-xs font-semibold text-zinc-300 tracking-wider uppercase">
-              We&apos;re Hiring
+              Registration Open
             </span>
           </div>
 
@@ -143,21 +117,27 @@ export default function EventsModal() {
             className="mb-2 text-3xl font-extrabold tracking-tight text-white"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
-            Join{" "}
-            <span className="text-blue-400">
-              Innovage Tech
-            </span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">
+              Innovage
+            </span>{" "}
+            Nexus
           </h2>
+
+          {/* Date */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] mb-3">
+            <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span className="text-sm font-bold text-white">7 September 2026</span>
+          </div>
 
           {/* Subtitle */}
           <p className="text-base leading-relaxed text-zinc-400">
-            We&apos;re looking for passionate minds to join our team!
-            From{" "}
-            <span className="text-white font-medium">developers</span> and{" "}
-            <span className="text-white font-medium">designers</span> to{" "}
-            <span className="text-white font-medium">content creators</span> and{" "}
-            <span className="text-white font-medium">event managers</span> —
-            there&apos;s a role for you.
+            Compete, create, and conquer — from{" "}
+            <span className="text-white font-medium">design sprints</span> to{" "}
+            <span className="text-white font-medium">AI-powered coding</span>,{" "}
+            <span className="text-white font-medium">gaming battlegrounds</span> to{" "}
+            <span className="text-white font-medium">cinematic challenges</span>.
           </p>
 
           {/* Follow us */}
@@ -176,31 +156,29 @@ export default function EventsModal() {
             </a>
           </div>
 
-          {/* Role highlights */}
+          {/* Event highlights */}
           <div className="w-full grid grid-cols-4 gap-2 mb-6">
-            <div className="flex flex-col items-center gap-1 py-3 px-2 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-              <span className="text-lg">💻</span>
-              <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Tech</span>
-            </div>
             <div className="flex flex-col items-center gap-1 py-3 px-2 rounded-xl bg-white/[0.04] border border-white/[0.06]">
               <span className="text-lg">🎨</span>
               <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Design</span>
             </div>
             <div className="flex flex-col items-center gap-1 py-3 px-2 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-              <span className="text-lg">📸</span>
-              <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Content</span>
+              <span className="text-lg">💻</span>
+              <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Coding</span>
             </div>
             <div className="flex flex-col items-center gap-1 py-3 px-2 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-              <span className="text-lg">🎯</span>
-              <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Events</span>
+              <span className="text-lg">🎮</span>
+              <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Gaming</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 py-3 px-2 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+              <span className="text-lg">🎬</span>
+              <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Cinema</span>
             </div>
           </div>
 
-          {/* CTA — links to Linktree */}
+          {/* CTA — links to event page */}
           <a
-            href="https://linktr.ee/innovagetech26"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/innovage-nexus"
             className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-sm font-bold uppercase tracking-widest text-white bg-blue-600 transition-all duration-300 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
           >
             Register Now

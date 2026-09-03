@@ -105,13 +105,13 @@ export default function HorizontalGallery() {
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/20 bg-green-500/5 mb-8">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
               </span>
               <span className="text-[11px] font-semibold text-zinc-300 tracking-wider uppercase">
-                Registration Open Soon
+                Registration Open
               </span>
             </div>
 
@@ -140,11 +140,12 @@ export default function HorizontalGallery() {
             </div>
 
             {/* CTA */}
-            <div
-              className="inline-flex items-center gap-2 px-10 py-3.5 rounded-full bg-zinc-700 text-white/50 text-sm font-bold uppercase tracking-widest cursor-not-allowed select-none"
+            <a
+              href="/innovage-nexus"
+              className="inline-flex items-center gap-2 px-10 py-3.5 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Coming Soon
-            </div>
+              Register Now
+            </a>
 
             {/* Scroll hint */}
           

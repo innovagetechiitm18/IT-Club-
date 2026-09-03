@@ -249,3 +249,13 @@ h6 {
   background: #3b82f6;
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
+
+/* ─── Announcement Ticker ─── */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

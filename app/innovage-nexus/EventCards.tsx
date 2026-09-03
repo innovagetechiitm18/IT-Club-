@@ -105,7 +105,7 @@ const EVENTS: EventData[] = [
     title: "Gaming — BGMI & Free Fire",
     category: "Gaming",
     categoryColor: "text-amber-400",
-    registrationLink: "https://docs.google.com/forms/d/1W_McnFjQaOddb75SPOyjZ0DNMd-eIU_IVXHpPZQ86Ig/viewform",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdWssMK4LduLwLNFWNhiesQnGUPV8Wor9O_DYXFd3c6A0QxJw/viewform",
     fee: "₹60",
     feeNote: "per person",
     icon: (
@@ -336,12 +336,18 @@ function EventCard({ event, index }: { event: EventData; index: number }) {
 
         {/* Register Button */}
         <div className="mt-6 pt-5 border-t border-white/[0.06]">
-          <div
+          <a
+            href={event.registrationLink}
+            target="_blank"
+            rel="noopener noreferrer"
             id={`register-${event.id}`}
-            className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white/50 text-sm tracking-wide bg-zinc-700 cursor-not-allowed select-none`}
+            className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm tracking-wide bg-gradient-to-r ${event.accentFrom} ${event.accentTo} transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] cursor-pointer`}
           >
-            Registration Open Soon
-          </div>
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+            Register Now
+          </a>
         </div>
       </div>
     </div>

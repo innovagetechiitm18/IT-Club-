@@ -1,0 +1,96 @@
+/* ─── SIH Hero Gradient Animation ─── */
+@keyframes sih-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.sih-gradient-text {
+  background-size: 200% 200%;
+  animation: sih-gradient 4s ease-in-out infinite;
+}
+
+/* ─── Theme Card ─── */
+.sih-theme-card {
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.sih-theme-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 60px -12px rgba(0, 0, 0, 0.5),
+    0 0 40px -10px rgba(249, 115, 22, 0.1);
+}
+
+/* ─── Card Spotlight ─── */
+.sih-card-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(249, 115, 22, 0.06),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.sih-theme-card:hover .sih-card-spotlight {
+  opacity: 1;
+}
+
+/* ─── Floating Glow Orbs ─── */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-5px); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-30px) translateX(-15px); }
+}
+
+.sih-float-1 {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.sih-float-2 {
+  animation: float-slower 12s ease-in-out infinite;
+}
+
+/* ─── Pulsing Ring ─── */
+@keyframes sih-pulse-ring {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.15); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+.sih-pulse-ring {
+  animation: sih-pulse-ring 3s ease-in-out infinite;
+}
+
+/* ─── Timeline ─── */
+.sih-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(249, 115, 22, 0.3), transparent);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .sih-timeline-line {
+    left: 20px;
+  }
+}
