@@ -182,11 +182,7 @@ export default function SIHContent() {
           {/* Presented by */}
           <p className="sih-hero-anim text-sm md:text-base text-zinc-400 tracking-wide">
             Organized by{" "}
-            <span className="text-white font-semibold">Department of Computer Science, IINTM</span>
-            <br />
-            <span className="text-xs md:text-sm text-zinc-500 mt-1 inline-block">
-              in association with <span className="text-orange-400/80 font-medium">Innovage Tech Club</span>
-            </span>
+            <span className="text-white font-semibold">Department of Computer Science and Innovage Tech, IINTM</span>
           </p>
 
           {/* Title */}
