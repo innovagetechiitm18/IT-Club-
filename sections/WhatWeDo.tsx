@@ -16,8 +16,7 @@ export default function WhatWeDo() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
-              variant={"secondary"}
-              className="bg-white hover:scale-[1.1] rounded-4xl hover-bg-w text-black py-6 px-8 text-md w-full sm:w-auto"
+              className="bg-white text-black border border-transparent hover:border-white hover:bg-transparent hover:text-white rounded-4xl py-6 px-8 text-md w-full sm:w-auto transition-all duration-300"
               size="lg"
               onClick={() => scrollToSection("team")}
             >
@@ -25,9 +24,8 @@ export default function WhatWeDo() {
             </Button>
 
             <Button
-              variant="outline"
+              className="bg-transparent text-white border border-white hover:bg-white hover:text-black rounded-4xl py-6 px-8 text-md w-full sm:w-auto transition-all duration-300"
               size="lg"
-              className="text-white hover:text-black rounded-4xl py-6 px-8 text-md w-full sm:w-auto"
               onClick={() => scrollToSection("gallery")}
             >
               Events
