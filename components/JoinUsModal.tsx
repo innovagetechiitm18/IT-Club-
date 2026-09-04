@@ -102,13 +102,11 @@ export default function JoinUsModal() {
             className="mb-2 text-3xl font-bold tracking-tight text-white"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
-            Coming Soon
+            Recruitments Closed 🚪
           </h2>
 
           <p className="mb-6 text-base leading-relaxed text-zinc-400">
-            We&apos;re not recruiting right now, but something exciting is on the way.
-            Follow us on social media to be the <span className="text-white font-medium">first to know</span> when
-            applications open!
+            We&apos;re flattered by the interest, but the doors are officially shut! If you&apos;re reading this, you were a <span className="text-white font-medium italic">little</span> too late to the party. Don&apos;t worry though—feel free to stalk our socials so you don&apos;t miss out (again) next time.
           </p>
 
           <div className="flex items-center gap-4 mb-6">
@@ -140,7 +138,7 @@ export default function JoinUsModal() {
             onClick={close}
             className="w-full rounded-full bg-blue-700 py-3 text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
           >
-            Got It
+            Fair Enough
           </button>
         </div>
       </div>
