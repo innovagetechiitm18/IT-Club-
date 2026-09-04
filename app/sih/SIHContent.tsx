@@ -70,7 +70,7 @@ const THEMES = [
 const DETAILS = [
   { label: "Date", value: "14 September 2026", icon: "📅" },
   { label: "Time", value: "10:00 AM Onwards", icon: "⏰" },
-  { label: "Venue", value: "Room 512", icon: "📍" },
+  { label: "Venue", value: "Room 511", icon: "📍" },
   { label: "Team Size", value: "6 Members", icon: "👥" },
 ];
 
@@ -297,7 +297,7 @@ export default function SIHContent() {
               {[
                 { step: "01", title: "Form a Team", desc: "Build a squad of 6 members (min. 1 female member) from the same institution." },
                 { step: "02", title: "Pick a Problem Statement", desc: "Choose from 226 challenges across 17 themes from the official SIH portal." },
-                { step: "03", title: "Internal Hackathon", desc: "Present your idea on 14 Sept at Room 512. Best teams get nominated for nationals." },
+                { step: "03", title: "Internal Hackathon", desc: "Present your idea on 14 Sept at Room 511. Best teams get nominated for nationals." },
                 { step: "04", title: "Grand Finale", desc: "Nominated teams compete in the 36-hour national hackathon in December 2026." },
               ].map((item) => (
                 <div key={item.step} className="flex gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] group hover:border-orange-500/20 transition-colors duration-300">
@@ -404,7 +404,7 @@ export default function SIHContent() {
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
             Form your team of 6, explore the problem statements, and join us on{" "}
             <span className="text-white font-semibold">14 September 2026</span> at{" "}
-            <span className="text-white font-semibold">Room 512, 10 AM onwards</span>.
+            <span className="text-white font-semibold">Room 511, 10 AM onwards</span>.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">

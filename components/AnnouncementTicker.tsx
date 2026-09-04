@@ -32,7 +32,7 @@ export default function AnnouncementTicker() {
                   {" — "}Internal Round by Dept. of Computer Science, IINTM & Innovage Tech Club
                   {" · "}
                   <span className="text-white font-semibold">14 Sept</span>
-                  {" · "}Room 512{" · "}10 AM Onwards
+                  {" · "}Room 511{" · "}10 AM Onwards
                   {" · "}
                   <span className="text-orange-400 underline underline-offset-2 decoration-orange-400/40">Click to know more →</span>
                 </span>
