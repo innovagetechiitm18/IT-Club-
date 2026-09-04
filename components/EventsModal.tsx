@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 
 export function openEventsModal() {
   window.dispatchEvent(new CustomEvent("open-events-modal"));
@@ -11,6 +12,7 @@ export default function EventsModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   const open = useCallback(() => {
     setIsOpen(true);
@@ -27,20 +29,25 @@ export default function EventsModal() {
   // Auto-open on mount (once per page load)
   useEffect(() => {
     setMounted(true);
+    
+    if (pathname === "/innovage-nexus") return;
+
     const timer = setTimeout(() => {
       open();
     }, 800);
     return () => clearTimeout(timer);
-  }, [open]);
+  }, [open, pathname]);
 
   // Listen for manual open event
   useEffect(() => {
     const handler = () => {
-      open();
+      if (pathname !== "/innovage-nexus") {
+        open();
+      }
     };
     window.addEventListener("open-events-modal", handler);
     return () => window.removeEventListener("open-events-modal", handler);
-  }, [open]);
+  }, [open, pathname]);
 
   // Escape key
   useEffect(() => {
@@ -54,7 +61,7 @@ export default function EventsModal() {
 
   // Lock scroll
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && pathname !== "/innovage-nexus") {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -62,9 +69,9 @@ export default function EventsModal() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, pathname]);
 
-  if (!mounted || !isOpen) return null;
+  if (!mounted || !isOpen || pathname === "/innovage-nexus") return null;
 
   return createPortal(
     <div
