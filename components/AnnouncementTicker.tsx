@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AnnouncementTicker() {
   return (
-    <div className="w-full bg-zinc-950/95 border-b border-orange-500/20 overflow-hidden z-50">
+    <div className="w-full h-[36px] bg-zinc-950/95 border-b border-orange-500/20 overflow-hidden z-50">
       <div className="flex items-stretch">
         {/* News label */}
         <div className="flex-shrink-0 flex items-center gap-2 px-4 md:px-5 py-2 bg-gradient-to-r from-orange-600 to-amber-500 relative z-10">

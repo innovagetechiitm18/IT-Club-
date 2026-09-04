@@ -69,7 +69,7 @@ export default function RootLayout({
           />
         </div>
 
-        <div className="relative z-10 overflow-x-hidden pt-[30px]">
+        <div className="relative z-10 overflow-x-hidden pt-[36px]">
           <Header />
           {children}
           <Footer />

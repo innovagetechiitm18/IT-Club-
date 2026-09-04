@@ -74,7 +74,7 @@ export default function Header() {
     <>
       <div
         ref={headerRef}
-        className="header-glass w-full fixed top-0 left-1/2 -translate-x-1/2 z-40 "
+        className="header-glass w-full fixed top-[36px] left-1/2 -translate-x-1/2 z-40 "
       >
         <div className="flex items-center justify-between px-4 md:px-8">
             <div

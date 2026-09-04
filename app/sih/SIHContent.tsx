@@ -427,7 +427,7 @@ export default function SIHContent() {
           </div>
 
           <p className="text-zinc-600 text-xs pt-6">
-            For queries, contact the organizers or your department SPOC.
+            For queries, DM us on our Instagram handle <a href="https://instagram.com/itclubiitm" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">@itclubiitm</a>.
           </p>
         </div>
       </section>
